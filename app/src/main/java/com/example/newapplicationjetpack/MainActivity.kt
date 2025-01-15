@@ -68,7 +68,7 @@ class MainActivity : ComponentActivity() {
                 Scaffold(modifier = Modifier.fillMaxSize()){ innerPadding ->
                     val navController = rememberNavController()
 
-                    NavHost(navController = navController, startDestination = "test") {
+                    NavHost(navController = navController, startDestination = "splashscreen") {
                         composable("login") { Login(navController) }
                         composable("home") { State(navController) }
                         composable("test") { ContactApp() }
