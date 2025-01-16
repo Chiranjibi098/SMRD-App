@@ -6,6 +6,8 @@
 
     <application
         android:allowBackup="true"
+        android:name=".MyApplication"
+        android:networkSecurityConfig="@xml/networkconfig"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/smrdlogo"
@@ -15,12 +17,12 @@
         android:theme="@style/Theme.NewApplicationJetpack"
         tools:targetApi="31">
         <activity
-            android:name=".activities.DashboardActivity"
+            android:name=".presentation.dashboard.DashboardActivity"
             android:exported="false"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.NewApplicationJetpack" />
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.auth.MainActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:theme="@style/Theme.NewApplicationJetpack">

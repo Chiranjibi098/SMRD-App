@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id("com.google.dagger.hilt.android")
+    id("kotlin-kapt")
 }
 
 android {
@@ -20,7 +22,7 @@ android {
 
     buildTypes {
         defaultConfig {
-            buildConfigField ("String","BASE_URL","\"https://b84a-49-249-100-2.ngrok-free.app\"")
+            buildConfigField ("String","BASE_URL","\"https://79c6-49-249-100-2.ngrok-free.app\"")
         }
         release {
             isMinifyEnabled = false
@@ -68,6 +70,12 @@ dependencies {
     val ohTeePeeVersion = "1.0.3"
     implementation("com.github.composeuisuite:ohteepee:$ohTeePeeVersion")
 
+// hilt
+    implementation("com.google.dagger:hilt-android:2.51.1")
+    implementation("androidx.hilt:hilt-navigation-compose:1.0.0")
+    kapt("com.google.dagger:hilt-android-compiler:2.51.1")
 
-
+}
+kapt {
+    correctErrorTypes = true
 }
